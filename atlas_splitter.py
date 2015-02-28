@@ -55,7 +55,7 @@ def print_usage():
 
 if sys.argv[1] == "--help":
     print_usage()
-elif len(sys.argv) < 2:
+elif len(sys.argv) < 3:
     print_usage()
 else:
     split(sys.argv[1], sys.argv[2])
