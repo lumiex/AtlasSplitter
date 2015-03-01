@@ -53,9 +53,9 @@ def split(atlas, out_dir):
 def print_usage():
     print "Usage : python atlas_splitter.py atlas out_dir"
 
-if sys.argv[1] == "--help":
+if len(sys.argv) < 3:
     print_usage()
-elif len(sys.argv) < 3:
+elif sys.argv[1] == "--help":
     print_usage()
 else:
     split(sys.argv[1], sys.argv[2])
