@@ -17,7 +17,9 @@ def write_image(name, sprites, atlas_file, out_dir):
     sizes = sizematcher.match(atlas_file.readline())
     width = int(sizes.group(1))
     height = int(sizes.group(2))
-    atlas_file.readline() #ignore origin
+    split = atlas_file.readline()
+    if "split" in split:
+        atlas_file.readline() #ignore origin
     atlas_file.readline() #ignore offset
     index_match = indexmatcher.match(atlas_file.readline())
     index = index_match.group(1)
